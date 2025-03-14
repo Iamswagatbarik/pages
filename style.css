@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yellowtail&display=swap" rel="stylesheet');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    background-image: url("bgImage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.content {
+    text-align: center;
+    padding: 24px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 0px 0px 12px 12px;
+    background: linear-gradient(to right, #7bb5c3, #101519)
+}
+
+.marquee-container {
+    width: 100%;
+    top: 10%;
+    text-align: center;
+}
+
+.marquee-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.box {
+    color: #fff;
+    /* text-align: center; */
+    justify-content: center;
+    font-weight: bold;
+    max-width: 48rem;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    backdrop-filter: saturate(120%) blur(16px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box p {
+    margin-bottom: 1rem;
+}
+
+
+.bottom-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #3fabb9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.bottom-button:hover {
+    color: #3fabb9;
+    background-color: #fff;
+}
