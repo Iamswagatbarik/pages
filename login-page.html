@@ -3,115 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/login-page.css">
     <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url("bgImage.jpg");
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            const loginButton = document.querySelector('.login-btn');
+            loginButton.textContent = "Logging in..."; // Show buffering text
+            setTimeout(() => {
+                window.location.href = "./index.html"; // Redirect after 2 seconds
+            }, 2000);
         }
-        .login-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #ffffff;
-            padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: inline;
-            margin-bottom: 5px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .form-group input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
-        .forgot-password {
-            display: block;
-            text-align: right;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #007bff;
-            text-decoration: none;
-        }
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 480px) {
-        .login-container {
-            width: 90%;
-            padding: 15px;
-        }
-        .login-container h2 {
-            font-size: 20px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            padding: 8px;
-        }
-        .login-btn {
-            font-size: 14px;
-            padding: 8px;
-        }
-        .forgot-password {
-            font-size: 12px;
-        }
-    }
-    </style>
+    </script>
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
-        <form>
+        <form onsubmit="handleLogin(event)">
+            <h1>Login</h1>
+
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
             </div>
+
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-            <div class="form-group">
-                <input type="checkbox" id="remember-me" name="remember-me">
-                <label for="remember-me">Remember Me</label>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="./index.html" class="forgot-password">Forgot Password?</a>
             </div>
+
             <button type="submit" class="login-btn">Login</button>
-            <a href="./index.html" class="forgot-password">Forgot Password?</a>
+
+            <div class="register-link">
+                <p> Don't have an account? <a href="./registation.html">Register</a></p>
+            </div>
+
         </form>
     </div>
 </body>
